@@ -1,0 +1,54 @@
+/* === Color Palette === */
+:root {
+      --bg: #faf7f2;
+      --text: #2b2b2b;
+      --accent: #4a7c59;
+      --muted: #777;
+      --border: #ddd6cb;
+      --card-bg: #fffdf9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 3rem;
+}
+
+nav {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+}
+
+nav .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.ascii-art {
+    font-family: 'Courier New', monospace;
+    white-space: pre;
+}
