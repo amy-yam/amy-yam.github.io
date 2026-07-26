@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yam — What I'm Doing</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">yam</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="personal.html">Personal</a>
+        <a href="doing.html">What I'm Doing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="search-wrap">
+        <input id="site-search" type="text" placeholder="Search…" autocomplete="off" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>What I'm Doing</h1>
+    <p class="lead">Current work and projects.</p>
+
+    <section class="card">
+      <h2>TA — 15-122: Principles of Imperative Computation</h2>
+      <p>
+        <span class="tag">Teaching Assistant</span>
+        <span class="tag">Current</span>
+      </p>
+      <p>
+        Placeholder: I'm a teaching assistant for 15-122. Describe what you do —
+        holding office hours, leading recitations, grading, helping students
+        with C and reasoning about programs, etc.
+      </p>
+      <p>
+        Add any highlights here: how many students you support, topics you enjoy
+        teaching, or something you've learned from the role.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year">2026</span> yam</span>
+      <span>
+        <a href="mailto:you@example.com">Email</a> ·
+        <a href="https://github.com/">GitHub</a> ·
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
