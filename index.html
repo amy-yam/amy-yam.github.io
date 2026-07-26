@@ -1,91 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amy Home</title>
-  <!-- Apply saved theme BEFORE first paint to prevent a flash on navigation -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme") ||
-          ((window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
-    })();
-  </script>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">yam</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="personal.html">Personal</a>
-        <a href="doing.html">What I'm Doing</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="search-wrap">
-        <input id="site-search" type="text" placeholder="Search…" autocomplete="off" />
-        <div id="search-results" class="search-results"></div>
-      </div>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-    </div>
-  </nav>
+---
+layout: default
+title: Amy — Home
+---
+<h1>Hi, I'm Amy 👋</h1>
+<p class="lead">
+  Statistics and Machine Learning student at Carnegie Mellon in Pittsburgh, PA
+</p>
 
-  <!-- MAIN -->
-  <main class="container">
-    <h1>Hi, I'm yam 👋</h1>
-    <p class="lead">
-      A short intro goes here — who you are and what you're about. Replace this
-      with a sentence or two that sums you up.
-    </p>
+<section class="card">
+  <h2>About me</h2>
+  <p>
+    I'm a second-year undergraduate interested in data, machine learning, software, and AI.
+  </p>
+</section>
 
-    <section class="card">
-      <h2>About me</h2>
-      <p>
-        Placeholder bio. I'm a student / builder / curious person based in
-        [your location]. I like making things, learning how systems work, and
-        [something you care about]. Swap this text for your own story.
-      </p>
-    </section>
+<section class="card" id="interests">
+  <h2>What I'm interested in</h2>
+  <p>A few things I find myself thinking about:</p>
+  <p>
+    <span class="tag">Computer science</span>
+    <span class="tag">Teaching</span>
+    <span class="tag">Systems &amp; algorithms</span>
+    <span class="tag">Design</span>
+    <span class="tag">Writing &amp; art</span>
+  </p>
+</section>
 
-    <section class="card" id="interests">
-      <h2>What I'm interested in</h2>
-      <p>A few things I find myself thinking about:</p>
-      <p>
-        <span class="tag">Computer science</span>
-        <span class="tag">Teaching</span>
-        <span class="tag">Systems &amp; algorithms</span>
-        <span class="tag">Design</span>
-        <span class="tag">Writing</span>
-        <span class="tag">Add your own</span>
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>What I do</h2>
-      <p>
-        Currently I'm a TA for 15-122. More on the
-        <a href="doing.html">What I'm Doing</a> page. Add other roles, projects,
-        or studies here.
-      </p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>
-        <a href="the.wang.amy@gmail.com">Email</a>·
-        <a href="https://github.com/amy-yam">GitHub</a> ·
-        <a href="https://app.joinhandshake.com/profiles/amy-wang">Handshake</a>
-      </span>
-    </div>
-  </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<section class="card">
+  <h2>What I do</h2>
+  <p>
+    Currently I'm a TA for 15-122. More on the
+    <a href="doing.html">What I'm Doing</a> page.
+  </p>
+</section>
