@@ -1,12 +1,17 @@
 <!-- SITE FOOTER — edit this once; it appears on every page. -->
 <footer class="footer">
   <div class="footer-inner">
-    <span>© <span id="year">2026</span> yam</span>
+    <span>© <span id="year">2026</span> Amy</span>
     <span>
       <a href="mailto:the.wang.amy@gmail.com">Email</a> ·
       <a href="https://github.com/amy-yam">GitHub</a> ·
-      <a href="contact.html">Contact</a>
+      <a href="https://app.joinhandshake.com/profiles/amy-wang">Handshake</a>
     </span>
   </div>
 </footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script>
+  (function () {
+    var y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  })();
+</script>
