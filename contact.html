@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yam — Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">yam</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="personal.html">Personal</a>
+        <a href="doing.html">What I'm Doing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="search-wrap">
+        <input id="site-search" type="text" placeholder="Search…" autocomplete="off" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Contact</h1>
+    <p class="lead">The best ways to reach me.</p>
+
+    <section class="card">
+      <p>📧 Email — <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>💻 GitHub — <a href="https://github.com/">github.com/yourusername</a></p>
+      <p>🔗 LinkedIn — <a href="https://linkedin.com/">linkedin.com/in/yourusername</a></p>
+      <p>Replace these placeholders with your real handles.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year">2026</span> yam</span>
+      <span>
+        <a href="mailto:you@example.com">Email</a> ·
+        <a href="https://github.com/">GitHub</a> ·
+        <a href="https://linkedin.com/">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
