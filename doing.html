@@ -1,72 +1,23 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amy What I'm Doing</title>
-  <!-- Apply saved theme BEFORE first paint to prevent a flash on navigation -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme") ||
-          ((window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
-    })();
-  </script>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">yam</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="personal.html">Personal</a>
-        <a href="doing.html">What I'm Doing</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="search-wrap">
-        <input id="site-search" type="text" placeholder="Search…" autocomplete="off" />
-        <div id="search-results" class="search-results"></div>
-      </div>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-    </div>
-  </nav>
+---
+layout: default
+title: Amy — What I'm Doing
+---
+<h1>What I'm Doing</h1>
+<p class="lead">Current work and projects.</p>
 
-  <main class="container">
-    <h1>What I'm Doing</h1>
-    <p class="lead">Current work and projects.</p>
-
-    <section class="card">
-      <h2>TA — 15-122: Principles of Imperative Computation</h2>
-      <p>
-        <span class="tag">Teaching Assistant</span>
-        <span class="tag">Current</span>
-      </p>
-      <p>
-        Placeholder: I'm a teaching assistant for 15-122. Describe what you do —
-        holding office hours, leading recitations, grading, helping students
-        with C and reasoning about programs, etc.
-      </p>
-      <p>
-        Add any highlights here: how many students you support, topics you enjoy
-        teaching, or something you've learned from the role.
-      </p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>
-        <a href="the.wang.amy@gmail.com">Email</a>·
-        <a href="https://github.com/amy-yam">GitHub</a> ·
-        <a href="https://app.joinhandshake.com/profiles/amy-wang">Handshake</a>
-      </span>
-    </div>
-  </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
-</body>
-</html>
+<section class="card">
+  <h2>TA — 15-122: Principles of Imperative Computation</h2>
+  <p>
+    <span class="tag">Teaching Assistant</span>
+    <span class="tag">Current</span>
+  </p>
+  <p>
+    This past summer, I held precepts and office hours twice a week, graded work from 100+ students, 
+    and worked with faculty to playtest, edit, and quality check 15+ assignments and quizzes before they went out to students.
+    I'll be back in the fall for another semester!
+  </p>
+  <p>
+    Also, I occasionally post to the <a href="https://www.instagram.com/chonk122">chonk122</a> and <a href="https://www.instagram.com/honk15122">honk15122</a> Instagram accounts,
+    mostly to flex having custody of the course mascots. Follow the geese and I there!
+  </p>
+</section>
