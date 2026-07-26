@@ -1,35 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Amy Wang</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav>
-            <div class="nav-inner">
-                <span class="site-name">Amy</span>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="hobbies.html">Hobbies</a></li>
-                    <li><a href="recs.html">Music Recs</a></li>
-                </ul>
-            </div>
-        </nav>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yam — Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">yam</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="personal.html">Personal</a>
+        <a href="doing.html">What I'm Doing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="search-wrap">
+        <input id="site-search" type="text" placeholder="Search…" autocomplete="off" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </nav>
 
-        <main>
-            <pre class="ascii-art">
-                <!---placeholder-->
-            </pre>
+  <!-- MAIN -->
+  <main class="container">
+    <h1>Hi, I'm yam 👋</h1>
+    <p class="lead">
+      A short intro goes here — who you are and what you're about. Replace this
+      with a sentence or two that sums you up.
+    </p>
 
-            <p class="intro">
-                I'm a student at Carnegie Mellon University in Pittsburgh, Pennsylvania.
-            </p>
-        </main>
+    <section class="card">
+      <h2>About me</h2>
+      <p>
+        Placeholder bio. I'm a student / builder / curious person based in
+        [your location]. I like making things, learning how systems work, and
+        [something you care about]. Swap this text for your own story.
+      </p>
+    </section>
 
-        <footer>
-            <p>Contact me at <a href="mailto:the.wang.amy@gmail.com">the.wang.amy@gmail.com</a></p>
-        </footer>
-    </body>
+    <section class="card" id="interests">
+      <h2>What I'm interested in</h2>
+      <p>A few things I find myself thinking about:</p>
+      <p>
+        <span class="tag">Computer science</span>
+        <span class="tag">Teaching</span>
+        <span class="tag">Systems &amp; algorithms</span>
+        <span class="tag">Design</span>
+        <span class="tag">Writing</span>
+        <span class="tag">Add your own</span>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>What I do</h2>
+      <p>
+        Currently I'm a TA for 15-122. More on the
+        <a href="doing.html">What I'm Doing</a> page. Add other roles, projects,
+        or studies here.
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year">2026</span> yam</span>
+      <span>
+        <a href="mailto:you@example.com">Email</a> ·
+        <a href="https://github.com/">GitHub</a> ·
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
 </html>
