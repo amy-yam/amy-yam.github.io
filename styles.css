@@ -25,6 +25,8 @@
   --shadow:        0 4px 18px rgba(90, 60, 30, 0.08);
   --maxw:          760px;
   --font:          "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  color-scheme: light;
 }
 
 [data-theme="dark"] {
@@ -41,6 +43,8 @@
   --text-muted:    #b8a591;
 
   --shadow:        0 4px 18px rgba(0, 0, 0, 0.35);
+
+  color-scheme: dark;
 }
 
 /* =========================================================
