@@ -27,9 +27,30 @@ function updateThemeIcon() {
 
 /* =========================================================
    COLLAPSIBLES
+   Animates the panel to its real height so any content
+   (including image galleries) is fully revealed.
    ========================================================= */
 function toggleCollapsible(btn) {
-  btn.parentElement.classList.toggle("open");
+  var wrap = btn.parentElement;
+  var panel = wrap.querySelector(".panel");
+  var opening = !wrap.classList.contains("open");
+
+  wrap.classList.toggle("open");
+  if (opening) {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+    // Recompute once images finish loading (their height may grow).
+    panel.querySelectorAll("img").forEach(function (img) {
+      if (!img.complete) {
+        img.addEventListener("load", function () {
+          if (wrap.classList.contains("open")) {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        }, { once: true });
+      }
+    });
+  } else {
+    panel.style.maxHeight = null;
+  }
 }
 
 /* =========================================================
@@ -40,10 +61,9 @@ var SEARCH_INDEX = [
   { title: "About me",        page: "index.html",    keywords: "home about intro interests what i do" },
   { title: "Interests",       page: "index.html#interests", keywords: "interests curious topics" },
   { title: "Hobbies",         page: "personal.html", keywords: "personal hobbies free time" },
-  { title: "Reading",         page: "personal.html#reading", keywords: "books reading fiction" },
-  { title: "Cooking",         page: "personal.html#cooking", keywords: "cooking food recipes baking" },
-  { title: "Music",           page: "personal.html#music",   keywords: "music guitar piano listening" },
-  { title: "Hiking",          page: "personal.html#hiking",  keywords: "hiking outdoors trails nature" },
+  { title: "Photography",     page: "personal.html#photography", keywords: "photos photography camera gallery pictures" },
+  { title: "Fiber Arts",      page: "personal.html#fiber-arts",  keywords: "fiber arts knitting crochet weaving yarn" },
+  { title: "Writing",         page: "personal.html#writing",     keywords: "writing essays poetry blog" },
   { title: "15-122 TA work",  page: "doing.html",    keywords: "what im doing teaching assistant ta 15122 cmu principles imperative computation" },
   { title: "Contact",         page: "contact.html",  keywords: "contact email github linkedin reach out" }
 ];
@@ -77,10 +97,59 @@ function escapeHtml(s) {
 }
 
 /* =========================================================
+   IMAGE GALLERY LIGHTBOX
+   Works on any page that has a .gallery. Thumbnails may set
+   data-full="<large image url>" for a hi-res lightbox image.
+   ========================================================= */
+function initGallery() {
+  var imgs = Array.prototype.slice.call(document.querySelectorAll(".gallery img"));
+  if (!imgs.length) return;
+
+  var lb = document.createElement("div");
+  lb.className = "lightbox";
+  lb.innerHTML =
+    '<button class="lb-btn lb-close" aria-label="Close">&times;</button>' +
+    '<button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>' +
+    '<figure class="lb-figure"><img alt="" /><figcaption class="lb-caption"></figcaption></figure>' +
+    '<button class="lb-btn lb-next" aria-label="Next">&#8250;</button>';
+  document.body.appendChild(lb);
+
+  var lbImg = lb.querySelector("img");
+  var lbCap = lb.querySelector(".lb-caption");
+  var idx = 0;
+
+  function show(i) {
+    idx = (i + imgs.length) % imgs.length;
+    lbImg.src = imgs[idx].getAttribute("data-full") || imgs[idx].src;
+    var cap = imgs[idx].getAttribute("alt") || "";
+    lbImg.alt = cap;
+    lbCap.textContent = cap;
+    lbCap.style.display = cap ? "block" : "none";
+  }
+  function open(i) { show(i); lb.classList.add("open"); document.body.style.overflow = "hidden"; }
+  function close() { lb.classList.remove("open"); document.body.style.overflow = ""; }
+
+  imgs.forEach(function (img, i) {
+    img.addEventListener("click", function () { open(i); });
+  });
+  lb.querySelector(".lb-close").addEventListener("click", close);
+  lb.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); show(idx - 1); });
+  lb.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener("click", function (e) { if (e.target === lb || e.target.classList.contains("lb-figure")) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") show(idx - 1);
+    else if (e.key === "ArrowRight") show(idx + 1);
+  });
+}
+
+/* =========================================================
    INIT
    ========================================================= */
 document.addEventListener("DOMContentLoaded", function () {
   updateThemeIcon();
+  initGallery();
 
   var toggle = document.getElementById("theme-toggle");
   if (toggle) toggle.addEventListener("click", toggleTheme);
