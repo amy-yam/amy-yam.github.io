@@ -1,12 +1,17 @@
-<!-- SITE FOOTER — edit this once; it appears on every page. -->
-<footer class="footer">
-  <div class="footer-inner">
-    <span>© <span id="year">2026</span> yam</span>
-    <span>
-      <a href="mailto:the.wang.amy@gmail.com">Email</a> ·
-      <a href="https://github.com/amy-yam">GitHub</a> ·
+<!-- SITE HEADER / NAVBAR — edit this once; it appears on every page. -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Amy</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="personal.html">Personal</a>
+      <a href="doing.html">What I'm Doing</a>
       <a href="contact.html">Contact</a>
-    </span>
+    </div>
+    <div class="search-wrap">
+      <input id="site-search" type="text" placeholder="Search…" autocomplete="off" />
+      <div id="search-results" class="search-results"></div>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
   </div>
-</footer>
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</nav>
