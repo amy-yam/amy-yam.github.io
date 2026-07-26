@@ -24,52 +24,69 @@
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
     </div>
   </nav>
-
   <main class="container">
     <h1>Personal</h1>
     <p class="lead">Some of the things I do outside of work. Click a heading to expand it.</p>
-
-    <div class="collapsible" id="reading">
-      <button onclick="toggleCollapsible(this)">Reading <span class="chev">›</span></button>
+    <div class="collapsible" id="photography">
+      <button onclick="toggleCollapsible(this)">Photography <span class="chev">›</span></button>
+      <div class="panel">
+        <p>A few favorite shots. Click any photo to view it larger.</p>
+        <!-- IMAGE GALLERY
+             To use your own photos: replace each `src` with your thumbnail
+             (or the full image) and `data-full` with the large version.
+             The `alt` text becomes the lightbox caption. Add or remove
+             <figure> blocks freely — the grid and lightbox adapt. -->
+        <div class="gallery" id="photo-gallery">
+          <figure class="gallery-item">
+            <img src="https://picsum.photos/seed/yam-a/400/400"
+                 data-full="https://picsum.photos/seed/yam-a/1400/1400"
+                 alt="Placeholder photo 1" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://picsum.photos/seed/yam-b/400/400"
+                 data-full="https://picsum.photos/seed/yam-b/1400/1400"
+                 alt="Placeholder photo 2" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://picsum.photos/seed/yam-c/400/400"
+                 data-full="https://picsum.photos/seed/yam-c/1400/1400"
+                 alt="Placeholder photo 3" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://picsum.photos/seed/yam-d/400/400"
+                 data-full="https://picsum.photos/seed/yam-d/1400/1400"
+                 alt="Placeholder photo 4" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://picsum.photos/seed/yam-e/400/400"
+                 data-full="https://picsum.photos/seed/yam-e/1400/1400"
+                 alt="Placeholder photo 5" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://picsum.photos/seed/yam-f/400/400"
+                 data-full="https://picsum.photos/seed/yam-f/1400/1400"
+                 alt="Placeholder photo 6" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="collapsible" id="fiber-arts">
+      <button onclick="toggleCollapsible(this)">Fiber Arts <span class="chev">›</span></button>
       <div class="panel">
         <p>
-          Placeholder: what you like to read — favorite genres, a book you'd
-          recommend, or what's currently on your nightstand.
+          Placeholder
         </p>
       </div>
     </div>
-
-    <div class="collapsible" id="cooking">
-      <button onclick="toggleCollapsible(this)">Cooking <span class="chev">›</span></button>
+    <div class="collapsible" id="writing">
+      <button onclick="toggleCollapsible(this)">Writing <span class="chev">›</span></button>
       <div class="panel">
         <p>
-          Placeholder: dishes you love making, a cuisine you're exploring, or
-          your signature recipe.
-        </p>
-      </div>
-    </div>
-
-    <div class="collapsible" id="music">
-      <button onclick="toggleCollapsible(this)">Music <span class="chev">›</span></button>
-      <div class="panel">
-        <p>
-          Placeholder: instruments you play, genres you love, or artists on
-          repeat lately.
-        </p>
-      </div>
-    </div>
-
-    <div class="collapsible" id="hiking">
-      <button onclick="toggleCollapsible(this)">Hiking &amp; the outdoors <span class="chev">›</span></button>
-      <div class="panel">
-        <p>
-          Placeholder: favorite trails, a memorable hike, or where you'd like to
-          go next.
+          Placeholder
         </p>
       </div>
     </div>
   </main>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
