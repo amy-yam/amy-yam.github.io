@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>yam — Personal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">yam</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="personal.html">Personal</a>
+        <a href="doing.html">What I'm Doing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="search-wrap">
+        <input id="site-search" type="text" placeholder="Search…" autocomplete="off" />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Personal</h1>
+    <p class="lead">Some of the things I do outside of work. Click a heading to expand it.</p>
+
+    <div class="collapsible" id="reading">
+      <button onclick="toggleCollapsible(this)">Reading <span class="chev">›</span></button>
+      <div class="panel">
+        <p>
+          Placeholder: what you like to read — favorite genres, a book you'd
+          recommend, or what's currently on your nightstand.
+        </p>
+      </div>
+    </div>
+
+    <div class="collapsible" id="cooking">
+      <button onclick="toggleCollapsible(this)">Cooking <span class="chev">›</span></button>
+      <div class="panel">
+        <p>
+          Placeholder: dishes you love making, a cuisine you're exploring, or
+          your signature recipe.
+        </p>
+      </div>
+    </div>
+
+    <div class="collapsible" id="music">
+      <button onclick="toggleCollapsible(this)">Music <span class="chev">›</span></button>
+      <div class="panel">
+        <p>
+          Placeholder: instruments you play, genres you love, or artists on
+          repeat lately.
+        </p>
+      </div>
+    </div>
+
+    <div class="collapsible" id="hiking">
+      <button onclick="toggleCollapsible(this)">Hiking &amp; the outdoors <span class="chev">›</span></button>
+      <div class="panel">
+        <p>
+          Placeholder: favorite trails, a memorable hike, or where you'd like to
+          go next.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year">2026</span> yam</span>
+      <span>
+        <a href="mailto:you@example.com">Email</a> ·
+        <a href="https://github.com/">GitHub</a> ·
+        <a href="contact.html">Contact</a>
+      </span>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
