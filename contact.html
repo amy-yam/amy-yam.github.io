@@ -3,14 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>yam — Contact</title>
+  <title>Amy Contact</title>
+  <!-- Apply saved theme BEFORE first paint to prevent a flash on navigation -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+          ((window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="brand">Amy</a>
+      <a href="index.html" class="brand">yam</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="personal.html">Personal</a>
@@ -30,20 +40,19 @@
     <p class="lead">The best ways to reach me.</p>
 
     <section class="card">
-      <p>Email: <a href="mailto:the.wang.amy@gmail.com">the.wang.amy@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/amy-yam">github.com/amy-yam</a></p>
+      <p>📧 Email: <a href="the.wang.amy@gmail.com">the.wang.amy@gmail.com</a></p>
+      <p>💻 GitHub: <a href="https://github.com/amy-yam">github.com/amy-yam</a></p>
       <p>Handshake: <a href="https://app.joinhandshake.com/profiles/amy-wang">https://app.joinhandshake.com/profiles/amy-wang</a></p>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>© <span id="year">2026</span> yam</span>
       <span>
-        <a href="mailto:the.wang.amy@gmail.com">Email</a> ·
+        <a href="the.wang.amy@gmail.com">Email</a>·
         <a href="https://github.com/amy-yam">GitHub</a> ·
-        <a href="contact.html">Contact</a>
+        <a href="https://app.joinhandshake.com/profiles/amy-wang">Handshake</a>
       </span>
     </div>
   </footer>
