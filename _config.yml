@@ -1,0 +1,4 @@
+# Site-wide settings. GitHub Pages builds this with Jekyll automatically.
+title: Amy
+# If you ever move the site into a subpath, set baseurl: "/repo-name"
+baseurl: ""
