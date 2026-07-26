@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>yam — Home</title>
+  <title>Amy Home</title>
+  <!-- Apply saved theme BEFORE first paint to prevent a flash on navigation -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+          ((window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
 </head>
@@ -11,7 +21,7 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="brand">Amy</a>
+      <a href="index.html" class="brand">yam</a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="personal.html">Personal</a>
@@ -28,15 +38,18 @@
 
   <!-- MAIN -->
   <main class="container">
-    <h1>Hi, I'm Amy 👋</h1>
+    <h1>Hi, I'm yam 👋</h1>
     <p class="lead">
-      Sophomore in Statistics and Machine Learning at Carnegie Mellon
+      A short intro goes here — who you are and what you're about. Replace this
+      with a sentence or two that sums you up.
     </p>
 
     <section class="card">
       <h2>About me</h2>
       <p>
-        I'm a student based in Pittsburgh, Pennsylvania. I like making things, picking up new hobbies, and cats. Some of my friends call me yam (it's an anagram of Amy!) or Alexis.
+        Placeholder bio. I'm a student / builder / curious person based in
+        [your location]. I like making things, learning how systems work, and
+        [something you care about]. Swap this text for your own story.
       </p>
     </section>
 
@@ -49,15 +62,16 @@
         <span class="tag">Systems &amp; algorithms</span>
         <span class="tag">Design</span>
         <span class="tag">Writing</span>
-        <span class="tag">Fiber arts</span>
-        <span class="tag">Photography</span>
+        <span class="tag">Add your own</span>
       </p>
     </section>
 
     <section class="card">
       <h2>What I do</h2>
       <p>
-        Currently I'm a TA for 15-122. More on the <a href="doing.html">What I'm Doing</a> page. 
+        Currently I'm a TA for 15-122. More on the
+        <a href="doing.html">What I'm Doing</a> page. Add other roles, projects,
+        or studies here.
       </p>
     </section>
   </main>
@@ -67,8 +81,8 @@
     <div class="footer-inner">
       <span>© <span id="year">2026</span> yam</span>
       <span>
-        <a href="mailto:the.wang.amy@gmail.com">Email</a> ·
-        <a href="https://github.com/amy-yam">GitHub</a> ·
+        <a href="mailto:you@example.com">Email</a> ·
+        <a href="https://github.com/">GitHub</a> ·
         <a href="contact.html">Contact</a>
       </span>
     </div>
